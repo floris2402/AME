@@ -3,31 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AME</title>
-    <!-- Lien vers le fichier CSS externe -->
+    <title>VEILLE SENIOR</title>
+    <!-- Intégration du fichier CSS externe -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+<header>
+    <nav>
         <div class="logo-container">
+            <!-- Lien ajouté autour du logo pour revenir à l'accueil -->
             <a href="index.html" class="logo-link">
-               <img src="logo.png" alt="Logo AME" class="logo-img">
+               <img src="logo.png" alt="Logo AlertMarc" class="logo-img">
+<img src="veille.png" alt="Veille Senior" class="veille-img">
             </a>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <h1>Bienvenue sur AME</h1>
-        <p>Ton mini site est en ligne, responsive et prêt à l'emploi.</p>
-    </main>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
 
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            
+            <li><a href="index.html#preview">Aperçu</a></li>
+            <li><a href="delete-data.html">Suppression des données</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Légal</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="hero" id="accueil">
+        <div class="hero-container">
+            <!-- QR Code placé à gauche avec le texte et le bouton demandés -->
+            <div class="hero-qrcode" style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <span style="font-weight: bold; font-size: 1.2rem; color: #1976d2; letter-spacing: 1px;">VIDEO</span>
+                <img src="QR_CODE.png" alt="QR Code de démonstration" class="qrcode-img">
+                <a href="https://youtu.be/S_Qs3pu3Yz0" target="_blank" class="btn" style="text-decoration: none; display: inline-block; margin-top: 5px;">Voir la vidéo</a>
+            </div>
+            
+            <!-- Contenu texte et bouton à droite -->
+            <div class="hero-content">
+                <h1>VEILLE SENIOR</h1>
+                <p>Application de sécurité vocale pour personnes âgées.</p>
+                <!-- Appel de la fonction Javascript pour le téléchargement -->
+                <button class="btn" onclick="telechargerApp()">Télécharger sur le Play Store</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" id="features">
+        <h2 style="text-align: center; margin-bottom: 1rem;">Points forts de l'application</h2>
+        <div class="features">
+            <div class="feature-card">
+                <span class="icon">📢</span>
+                <h3>Reconnaissance vocale</h3>
+                <p>100% hors-ligne Fonctionne sans internet.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">⚙️</span>
+                <h3>Détection de chute</h3>
+                <p>Alerte automatiquesans action de la person.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">🚗</span>
+                <h3>Localisation précise</h3>
+                <p>Ville + coordonnées GPS + lien Google Maps.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-section" id="preview">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Aperçu de l'interface</h2>
+           <div class="gallery">
+        <div class="gallery-container">
+            <img class="gallery-item gallery-item-1"  src="333.jpeg" alt="" index-1="1">
+            <img class="gallery-item gallery-item-2"  src="444.jpeg" alt="" index-2="2">
+            <img class="gallery-item gallery-item-3"  src="555.jpeg" alt="" index-3="3">
+           
+        </div>
+        <div class="gallery-controls"></div>
+    </div>
+        </div>
+    </div>
+
+<footer>
+    <p>&copy; 2026 VEILLE SENIOR. Tous droits réservés.</p>
+
+    <div class="footer-links">
+        <a href="privacy.html">Mentions Légales & Confidentialité</a>
+        <a href="delete-data.html">Suppression des données</a>
+        <a href="contact.html">Aide & Support</a>
+    </div>
+</footer>
+
+    <!-- Intégration du fichier JavaScript externe -->
+    <script src="script.js"></script>
 </body>
 </html>
