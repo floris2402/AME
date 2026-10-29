@@ -29,6 +29,7 @@ body {
 }
 
 /* Logo animé */
+/* Le logo démarre au centre de l'écran (sans fond blanc) */
 .logo-container {
     position: fixed;
     top: 50%;
@@ -37,6 +38,9 @@ body {
     opacity: 0;
     z-index: 2000;
     transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    background-color: transparent; /* Pas de fond au début */
+    padding: 0;
+    border-radius: 0;
 }
 
 .logo-container img {
@@ -46,20 +50,29 @@ body {
     transition: height 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* Phase 1 : Le logo apparaît au centre et grossit (toujours sans fond) */
 .logo-container.pop {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.5);
 }
 
+/* Phase 2 : Le logo arrive en haut à gauche : l'effet de fond blanc aux coins arrondis s'active ici */
 .logo-container.in-header {
     top: 40px;
     left: 30px;
     transform: translate(0, -50%) scale(1);
     opacity: 1;
+    
+    /* Le fond blanc et les coins arrondis */
+    background-color: #ffffff;
+    padding: 6px 12px;           /* Espace autour du logo pour que le fond blanc dépasse un peu */
+    border-radius: 10px;         /* Coins arrondis */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Optionnel : petite ombre pour faire joli sur la barre bleue */
 }
 
+/* Réduction de la taille de l'image dans le bandeau */
 .logo-container.in-header img {
-    height: 55px;
+    height: 45px; /* Ajusté légèrement pour s'intégrer parfaitement dans le rectangle blanc */
 }
 
 /* Menu de navigation */
