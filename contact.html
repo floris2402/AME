@@ -147,8 +147,12 @@
                 <p>Besoin d'aide ou d'un renseignement ? Nous sommes là pour vous.</p>
             </div>
 
-            <form action="https://formsubmit.co/eco.marc@hotmail.fr" method="POST">
-                <input type="hidden" name="_subject" value="Nouveau message - Site Web AlertMarc">
+<form action="https://api.web3forms.com/submit" method="POST">
+                <!-- Ta clé d'accès gratuite (générée pour eco.marc@hotmail.fr) -->
+                <input type="hidden" name="access_key" value="aba83ba5-5733-4a92-a47e-907094297405">
+                
+                <!-- Optionnel : Redirection après envoi ou sujet du mail -->
+                <input type="hidden" name="subject" value="Nouveau message - Site Web AlertMarc">
                 
                 <div class="form-row">
                     <div class="form-group">
@@ -164,7 +168,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" placeholder="votre@email.com">
+                        <input type="email" name="email" id="email" placeholder="votre@email.com" required>
                     </div>
                     <div class="form-group">
                         <label for="tel">Téléphone</label>
