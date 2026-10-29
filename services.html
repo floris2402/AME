@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AME - Nos Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Bandeau bleu fixe en haut -->
+    <header class="header-banner">
+        <!-- Logo cliquable ramenant vers l'accueil -->
+        <a href="index.html" class="logo-container" id="logoContainer">
+            <img src="logo_nobg.png" alt="Logo Entreprise" id="mainLogo">
+        </a>
+        
+        <!-- Menu -->
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <h1>Mes services</h1>
+        <p class="subtitle">Découvrez l'ensemble de nos expertises et prestations.</p>
+        
+        <section id="services">
+            <!-- Rubrique 1 -->
+            <div class="service" data-service="installation">
+                <h2>Installation électrique</h2>
+                <p>J'assure l'installation complète de vos systèmes électriques, garantissant sécurité et efficacité.</p>
+                <span class="click-hint">Cliquez pour voir les photos</span>
+            </div>
+
+            <!-- Rubrique 2 (Nom au choix : Conception & Multimédia / Études & Créations / etc.) -->
+            <div class="service" data-service="conception">
+                <h2>Conception & Multimédia</h2>
+                <p>Présentation de vos projets à travers le design, le montage vidéo et la réalisation de plans 2D et 3D.</p>
+                <span class="click-hint">Cliquez pour en savoir plus</span>
+            </div>
+
+            <!-- Rubrique 3 -->
+            <div class="service" data-service="developpement">
+                <h2>Développement</h2>
+                <p>Création de solutions logicielles, d'applications et de sites internet adaptés à vos besoins spécifiques.</p>
+                <span class="click-hint">Cliquez pour en savoir plus</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modale d'affichage (pour les diaporamas ou informations) -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h3 id="modalTitle">Titre du service</h3>
+            <div class="modal-gallery" id="modalGallery"></div>
+        </div>
+    </div>
+
+    <!-- Bas de page fixe (Footer) -->
+    <footer class="footer-banner">
+        <p>&copy; 2026 ALERTMARC ELECTRICITE. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
