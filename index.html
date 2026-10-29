@@ -4,100 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AME</title>
-    <!-- Intégration du fichier CSS externe -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <nav>
-        <div class="logo-container">
-            <!-- Lien ajouté autour du logo pour revenir à l'accueil -->
-            <a href="index.html" class="logo-link">
-               <img src="logo.png" alt="Logo AlertMarc" class="logo-img">
-<img src="alertmarc.jpg" alt="alertmarc" class="alertmarc">
-            </a>
+    <!-- Bandeau bleu fixe en haut -->
+    <header class="header-banner">
+        <!-- Conteneur du logo -->
+        <div class="logo-container" id="logoContainer">
+            <img src="logo_nobg.png" alt="Logo Entreprise" id="mainLogo">
         </div>
+        
+        <!-- Menu poussé à droite -->
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <h1>    Électricité générale</h1>
+        <p>Un seul interlocuteur Marc.</p>
+    </main>
 
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            
-            <li><a href="index.html#preview">Aperçu</a></li>
-             
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="privacy.html">Légal</a></li>
-        </ul>
-    </nav>
-</header>
-
-    <section class="hero" id="accueil">
-        <div class="hero-container">
-            <!-- QR Code placé à gauche avec le texte et le bouton demandés -->
-           
-            
-            <!-- Contenu texte et bouton à droite -->
-            <div class="hero-content">
-                <h1>Électricité générale</h1>
-                <p>Application de sécurité vocale pour personnes âgées.</p>
-                <!-- Appel de la fonction Javascript pour le téléchargement -->
-                
-            </div>
-        </div>
-    </section>
-
-    <div class="container" id="features">
-        <h2 style="text-align: center; margin-bottom: 1rem;">Points forts de l'entrprise</h2>
-        <div class="features">
-            <div class="feature-card">
-                <span class="icon">📢</span>
-                <h3>Tous travaux d'électricité</h3>
-                <p>Aux normes en vigueur</p>
-            </div>
-            <div class="feature-card">
-                <span class="icon">⚙️</span>
-                <h3>Plan de l'installation et du bâtiment</h3>
-                <p>Sur demande et si nécessaire plan 2D et 3D</p>
-            </div>
-            <div class="feature-card">
-                <span class="icon">🚗</span>
-                <h3>Développement d'application Android et design</h3>
-                <p>Développement,  montage vidéo,  création de site internet et  conception graphique</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="preview-section" id="preview">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Aperçu de l'interface</h2>
-           <div class="gallery">
-        <div class="gallery-container">
-            <img class="gallery-item gallery-item-1"  src="333.jpeg" alt="" index-1="1">
-            <img class="gallery-item gallery-item-2"  src="444.jpeg" alt="" index-2="2">
-            <img class="gallery-item gallery-item-3"  src="555.jpeg" alt="" index-3="3">
-           
-        </div>
-        <div class="gallery-controls"></div>
-    </div>
-        </div>
-    </div>
-
-<footer>
-    <p>&copy; 2026 AlertMarc ELECTRICITE. Tous droits réservés.</p>
-
-    <div class="footer-links">
-        <a href="privacy.html">Mentions Légales & Confidentialité</a>
-         
-        <a href="contact.html">Aide & Support</a>
-    </div>
-</footer>
-
-    <!-- Intégration du fichier JavaScript externe -->
     <script src="script.js"></script>
 </body>
 </html>
