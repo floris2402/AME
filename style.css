@@ -74,7 +74,6 @@ body {
 .logo-container.in-header img {
     height: 45px; /* Ajusté légèrement pour s'intégrer parfaitement dans le rectangle blanc */
 }
-
 /* Menu de navigation */
 .main-nav {
     opacity: 0;
