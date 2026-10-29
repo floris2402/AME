@@ -263,6 +263,11 @@ body {
     z-index: 1000;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
 }
+/* Style du lien du logo */
+a.logo-container {
+    text-decoration: none;
+    display: inline-block;
+}
 
 /* Responsive Téléphone */
 @media (max-width: 768px) {
