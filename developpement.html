@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AME - Développement</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ajustement de la mise en page spécifique à la page Développement */
+        .dev-wrapper {
+            padding: 120px 20px 80px 20px;
+            min-height: calc(100vh - 50px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .dev-container {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .dev-container h1 {
+            color: #0d47a1;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .dev-container p.intro {
+            font-size: 1.15rem;
+            color: #555555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .dev-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .dev-card {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid #0d47a1;
+        }
+
+        .dev-card h3 {
+            color: #0d47a1;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .dev-card p {
+            color: #666666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bandeau bleu fixe en haut (Sans menu) -->
+    <header class="header-banner">
+        <!-- Logo cliquable pour revenir à l'accueil -->
+        <a href="index.html" class="logo-container" id="logoContainer">
+            <img src="logo_nobg.png" alt="Logo Entreprise" id="mainLogo">
+        </a>
+    </header>
+
+    <!-- Contenu Développement -->
+    <main class="dev-wrapper">
+        <div class="dev-container">
+            <h1>Développement Web & Logiciel</h1>
+            <p class="intro">
+                Création de solutions numériques sur-mesure, adaptées aux besoins des indépendants, artisans et entreprises.
+            </p>
+
+            <div class="dev-grid">
+                <div class="dev-card">
+                    <h3>Sites Vitrines</h3>
+                    <p>Conception de sites web modernes, rapides et entièrement adaptés aux mobiles et ordinateurs.</p>
+                </div>
+                <div class="dev-card">
+                    <h3>Applications Sur-Mesure</h3>
+                    <p>Développement d'outils spécifiques pour simplifier la gestion de vos activités au quotidien.</p>
+                </div>
+                <div class="dev-card">
+                    <h3>Accompagnement Technique</h3>
+                    <p>Mise en ligne, hébergement, suivi et maintenance continue de vos projets informatiques.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bas de page fixe -->
+    <footer class="footer-banner">
+        <p>&copy; 2026 ALERTMARC ELECTRICITE. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
