@@ -18,7 +18,6 @@
         <!-- Menu poussé à droite -->
         <nav class="main-nav" id="mainNav">
             <ul>
-                <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#a-propos">À propos</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -28,9 +27,44 @@
 
     <!-- Contenu principal -->
     <main class="main-content">
-        <h1>    Électricité générale</h1>
-        <p>Un seul interlocuteur Marc.</p>
+        <h1>Électricité générale</h1>
+        <p class="subtitle">Un seul interlocuteur Marc.</p>
+        
+        <h2>Mes services</h2>
+        <section id="services">
+            <div class="service" data-service="installation">
+                <h2>Installation électrique</h2>
+                <p>J'assure l'installation complète de vos systèmes électriques, garantissant sécurité et efficacité.</p>
+                <span class="click-hint">Cliquez pour voir les photos</span>
+            </div>
+            <div class="service" data-service="maintenance">
+                <h2>Maintenance</h2>
+                <p>Mes services de maintenance préventive et corrective assurent la longévité de vos installations.</p>
+                <span class="click-hint">Cliquez pour voir les photos</span>
+            </div>
+            <div class="service" data-service="depannage">
+                <h2>Dépannage</h2>
+                <p>Interventions rapides pour résoudre tout problème électrique, minimisant les interruptions.</p>
+                <span class="click-hint">Cliquez pour voir les photos</span>
+            </div>
+        </section>
     </main>
+
+    <!-- Fenêtre modale (Pop-up images) -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h3 id="modalTitle">Titre du service</h3>
+            <div class="modal-gallery" id="modalGallery">
+                <!-- Les images s'afficheront ici -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bas de page fixe (Footer) -->
+    <footer class="footer-banner">
+        <p>&copy; 2026 ALERTMARC ELECTRICITE. Tous droits réservés.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
