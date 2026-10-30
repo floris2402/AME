@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AME - Développement</title>
+    <title>AME - Conception & Multimédia</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Ajustement de la mise en page spécifique à la page Développement */
         .dev-wrapper {
             padding: 120px 20px 80px 20px;
             min-height: calc(100vh - 50px);
@@ -16,7 +15,7 @@
         }
 
         .dev-container {
-            max-width: 900px;
+            max-width: 950px;
             width: 100%;
             background: #ffffff;
             border-radius: 16px;
@@ -41,8 +40,8 @@
 
         .dev-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-top: 20px;
             text-align: left;
         }
@@ -52,55 +51,204 @@
             padding: 25px;
             border-radius: 12px;
             border-top: 4px solid #0d47a1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .dev-card h3 {
             color: #0d47a1;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 1.2rem;
         }
 
-        .dev-card p {
-            color: #666666;
-            font-size: 0.95rem;
-            line-height: 1.5;
+        /* Container des vignettes */
+        .thumbnails-container {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .thumb-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .thumb {
+            width: 110px;
+            height: 70px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid #0d47a1;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: #e2e8f0;
+        }
+
+        .thumb:hover {
+            transform: scale(1.06);
+            box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3);
+        }
+
+        .thumb-label {
+            font-size: 0.75rem;
+            color: #555;
+            font-weight: bold;
+            text-align: center;
+            max-width: 110px;
+        }
+
+        /* Modale d'affichage au centre */
+        .media-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .media-modal-content {
+            position: relative;
+            max-width: 800px;
+            width: 90%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .close-media {
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .media-box {
+            width: 100%;
+            max-height: 75vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .media-box img {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .media-box iframe {
+            width: 100%;
+            height: 420px;
+            border: none;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Bandeau bleu fixe en haut (Sans menu) -->
+    <!-- Bandeau bleu fixe en haut -->
     <header class="header-banner">
-        <!-- Logo cliquable pour revenir à l'accueil -->
         <a href="index.html" class="logo-container" id="logoContainer">
             <img src="logo_nobg.png" alt="Logo Entreprise" id="mainLogo">
         </a>
     </header>
 
-    <!-- Contenu Conception & Multimédia -->
+    <!-- Contenu principal -->
     <main class="dev-wrapper">
         <div class="dev-container">
             <h1>Conception & Multimédia</h1>
             <p class="intro">
-                Création de solutions numériques sur-mesure, adaptées aux besoins des indépendants, artisans et entreprises.
+                Découvrez mes réalisations en montage vidéo, applications mobiles, création graphique et modélisation 2D/3D.
             </p>
 
             <div class="dev-grid">
+
+                <!-- 1. Applications Android -->
                 <div class="dev-card">
-                    <h3>Sites Vitrines</h3>
-                    <p>Conception de sites web modernes, rapides et entièrement adaptés aux mobiles et ordinateurs.</p>
+                    <h3>Applications Android</h3>
+                    <p>Démonstrations en vidéo de mes applications mobiles développées.</p>
+                    <div class="thumbnails-container">
+                        <div class="thumb-item media-trigger" data-type="video" data-src="https://www.youtube.com/embed/S_Qs3pu3Yz0">
+                            <img src="https://img.youtube.com/vi/S_Qs3pu3Yz0/mqdefault.jpg" class="thumb" alt="Veille Senior">
+                            <span class="thumb-label">Veille Senior</span>
+                        </div>
+                        <div class="thumb-item media-trigger" data-type="video" data-src="https://www.youtube.com/embed/Xo2guiM_ejY">
+                            <img src="https://img.youtube.com/vi/Xo2guiM_ejY/mqdefault.jpg" class="thumb" alt="AlertMarc">
+                            <span class="thumb-label">AlertMarc</span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- 2. Montage Vidéo -->
                 <div class="dev-card">
-                    <h3>Applications Sur-Mesure</h3>
-                    <p>Développement d'outils spécifiques pour simplifier la gestion de vos activités au quotidien.</p>
+                    <h3>Montage Vidéo</h3>
+                    <p>Création et assemblage vidéo pour vos présentations et promotions.</p>
+                    <div class="thumbnails-container">
+                        <div class="thumb-item media-trigger" data-type="video" data-src="https://www.youtube.com/embed/Jdy3P2ilHE4">
+                            <img src="https://img.youtube.com/vi/Jdy3P2ilHE4/mqdefault.jpg" class="thumb" alt="Montage 1">
+                            <span class="thumb-label">Vidéo 1</span>
+                        </div>
+                        <div class="thumb-item media-trigger" data-type="video" data-src="https://www.youtube.com/embed/_pR0zLAPnPY">
+                            <img src="https://img.youtube.com/vi/_pR0zLAPnPY/mqdefault.jpg" class="thumb" alt="Montage 2">
+                            <span class="thumb-label">Vidéo 2</span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- 3. Conception Graphique (Ajout des deux images) -->
                 <div class="dev-card">
-                    <h3>Accompagnement Technique</h3>
-                    <p>Mise en ligne, hébergement, suivi et maintenance continue de vos projets informatiques.</p>
+                    <h3>Conception Graphique</h3>
+                    <p>Réalisation de visuels : flyers, cartes de visite et supports de communication.</p>
+                    <div class="thumbnails-container">
+                        <div class="thumb-item media-trigger" data-type="image" data-src="camera-flyer-3.2.png">
+                            <img src="camera-flyer-3.2.png" class="thumb" alt="Flyer Caméra">
+                            <span class="thumb-label">Flyer Caméra</span>
+                        </div>
+                        <div class="thumb-item media-trigger" data-type="image" data-src="R.jpg">
+                            <img src="R.jpg" class="thumb" alt="Création Graphique">
+                            <span class="thumb-label">Création Visuelle</span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- 4. Plans 2D et 3D (Ajout de l'image plan.png) -->
+                <div class="dev-card">
+                    <h3>Plans 2D & 3D</h3>
+                    <p>Modélisation et réalisation de plans techniques et architecturaux.</p>
+                    <div class="thumbnails-container">
+                        <div class="thumb-item media-trigger" data-type="image" data-src="plan.png">
+                            <img src="plan.png" class="thumb" alt="Plan 2D / 3D">
+                            <span class="thumb-label">Plan Technique</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
+
+    <!-- Fenêtre Modale d'affichage -->
+    <div id="mediaModal" class="media-modal">
+        <div class="media-modal-content">
+            <span class="close-media" id="closeMedia">&times;</span>
+            <div class="media-box" id="mediaBox"></div>
+        </div>
+    </div>
 
     <!-- Bas de page fixe -->
     <footer class="footer-banner">
@@ -108,5 +256,46 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('mediaModal');
+            const mediaBox = document.getElementById('mediaBox');
+            const closeBtn = document.getElementById('closeMedia');
+            const triggers = document.querySelectorAll('.media-trigger');
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const type = trigger.getAttribute('data-type');
+                    const src = trigger.getAttribute('data-src');
+
+                    mediaBox.innerHTML = '';
+
+                    if (type === 'image') {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        mediaBox.appendChild(img);
+                    } else if (type === 'video') {
+                        const iframe = document.createElement('iframe');
+                        iframe.src = src + '?autoplay=1&enablejsapi=1';
+                        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                        iframe.allowFullscreen = true;
+                        mediaBox.appendChild(iframe);
+                    }
+
+                    modal.style.display = 'flex';
+                });
+            });
+
+            function closeModal() {
+                modal.style.display = 'none';
+                mediaBox.innerHTML = ''; 
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+        });
+    </script>
 </body>
 </html>
