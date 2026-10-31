@@ -6,7 +6,6 @@
     <title>AME - Développement</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Ajustement de la mise en page spécifique à la page Développement */
         .dev-wrapper {
             padding: 120px 20px 80px 20px;
             min-height: calc(100vh - 50px);
@@ -16,7 +15,7 @@
         }
 
         .dev-container {
-            max-width: 900px;
+            max-width: 950px;
             width: 100%;
             background: #ffffff;
             border-radius: 16px;
@@ -41,8 +40,8 @@
 
         .dev-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-top: 20px;
             text-align: left;
         }
@@ -52,11 +51,14 @@
             padding: 25px;
             border-radius: 12px;
             border-top: 4px solid #0d47a1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .dev-card h3 {
             color: #0d47a1;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 1.2rem;
         }
 
@@ -65,13 +67,108 @@
             font-size: 0.95rem;
             line-height: 1.5;
         }
+
+        /* Container des vignettes d'applications */
+        .thumbnails-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .thumb-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .app-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 2px solid #0d47a1;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: #ffffff;
+        }
+
+        .app-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(13, 71, 161, 0.3);
+        }
+
+        .thumb-label {
+            font-size: 0.75rem;
+            color: #555;
+            font-weight: bold;
+            text-align: center;
+            max-width: 80px;
+        }
+
+        /* Modale d'affichage du diaporama au centre */
+        .media-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .media-modal-content {
+            position: relative;
+            max-width: 500px;
+            width: 90%;
+            background: #fff;
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .close-media {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .modal-title {
+            color: #0d47a1;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .media-box {
+            width: 100%;
+            max-height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .media-box img {
+            max-width: 100%;
+            max-height: 65vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
 
     <!-- Bandeau bleu fixe en haut (Sans menu) -->
     <header class="header-banner">
-        <!-- Logo cliquable pour revenir à l'accueil -->
         <a href="index.html" class="logo-container" id="logoContainer">
             <img src="logo_nobg.png" alt="Logo Entreprise" id="mainLogo">
         </a>
@@ -80,34 +177,118 @@
     <!-- Contenu Développement -->
     <main class="dev-wrapper">
         <div class="dev-container">
-            <h1>Développement Web & Logiciel</h1>
+            <h1>Développement Web & Applications</h1>
             <p class="intro">
-                Création de solutions numériques sur-mesure, adaptées aux besoins des indépendants, artisans et entreprises.
+                Conception sur-mesure de sites internet performants et d'applications mobiles/PWA adaptées à vos besoins.
             </p>
 
             <div class="dev-grid">
+
+                <!-- 1. Applications Android & PWA -->
                 <div class="dev-card">
-                    <h3>Sites Vitrines</h3>
-                    <p>Conception de sites web modernes, rapides et entièrement adaptés aux mobiles et ordinateurs.</p>
+                    <div>
+                        <h3>Applications Android & PWA</h3>
+                        <p>Développement d'applications natives Android et Progressive Web Apps (PWA) rapides, installables et fonctionnant sur tous vos appareils.</p>
+                    </div>
+                    <div class="thumbnails-container">
+                        <!-- Application AlertMarc -->
+                        <div class="thumb-item media-trigger" data-title="Application AlertMarc" data-images="a1.jpeg,a2.jpeg,a3.jpeg">
+                            <img src="alertmarc.png" class="app-icon" alt="AlertMarc">
+                            <span class="thumb-label">AlertMarc</span>
+                        </div>
+                        <!-- Application Veille Seniors -->
+                        <div class="thumb-item media-trigger" data-title="Veille Seniors" data-images="v1.jpeg,v2.jpeg,v3.jpeg,v4.jpeg">
+                            <img src="veille_senior.png" class="app-icon" alt="Veille Seniors">
+                            <span class="thumb-label">Veille Seniors</span>
+                        </div>
+                        <!-- Application Feuille d'heure -->
+                        <div class="thumb-item media-trigger" data-title="Feuille d'heure" data-images="ab1.jpg,ab2.jpg,ab3.jpg">
+                            <img src="icone_ab.png" class="app-icon" alt="Feuille d'heure">
+                            <span class="thumb-label">Feuille d'heure</span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- 2. Sites Sur-Mesure (HTML / CSS / JS) -->
                 <div class="dev-card">
-                    <h3>Applications Sur-Mesure</h3>
-                    <p>Développement d'outils spécifiques pour simplifier la gestion de vos activités au quotidien.</p>
+                    <h3>Sites Web Sur-Mesure</h3>
+                    <p>Développement complet en HTML5, CSS3 et JavaScript pur pour des sites ultra-rapides, modernes et 100 % personnalisés (comme ce site web).</p>
                 </div>
+
+                <!-- 3. Sites WordPress -->
                 <div class="dev-card">
-                    <h3>Accompagnement Technique</h3>
-                    <p>Mise en ligne, hébergement, suivi et maintenance continue de vos projets informatiques.</p>
+                    <h3>Sites WordPress</h3>
+                    <p>Création et personnalisation de sites vitrines sous WordPress, offrant une interface simple pour gérer facilement vos contenus au quotidien.</p>
                 </div>
+
             </div>
         </div>
     </main>
 
-   <!-- Bas de page fixe -->
+    <!-- Fenêtre Modale d'affichage du diaporama -->
+    <div id="mediaModal" class="media-modal">
+        <div class="media-modal-content">
+            <span class="close-media" id="closeMedia">&times;</span>
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <div class="media-box" id="mediaBox"></div>
+        </div>
+    </div>
+
+    <!-- Bas de page fixe -->
     <footer class="footer-banner" style="display: flex; justify-content: space-between; padding: 0 30px; font-size: 0.9rem;">
         <p>&copy; 2026 ALERTMARC ELECTRICITE. Tous droits réservés.</p>
         <p><a href="confidentialite.html" style="color: #ffffff; text-decoration: underline;">Politique de confidentialité & Mentions légales</a></p>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('mediaModal');
+            const mediaBox = document.getElementById('mediaBox');
+            const modalTitle = document.getElementById('modalTitle');
+            const closeBtn = document.getElementById('closeMedia');
+            const triggers = document.querySelectorAll('.media-trigger');
+            
+            let slideInterval = null;
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const title = trigger.getAttribute('data-title');
+                    const imagesList = trigger.getAttribute('data-images').split(',');
+
+                    mediaBox.innerHTML = '';
+                    modalTitle.textContent = title;
+
+                    const img = document.createElement('img');
+                    let currentIndex = 0;
+                    img.src = imagesList[currentIndex];
+                    img.alt = title;
+                    mediaBox.appendChild(img);
+
+                    modal.style.display = 'flex';
+
+                    // Lancement du diaporama en boucle toutes les 3 secondes
+                    if (imagesList.length > 1) {
+                        clearInterval(slideInterval);
+                        slideInterval = setInterval(() => {
+                            currentIndex = (currentIndex + 1) % imagesList.length;
+                            img.src = imagesList[currentIndex];
+                        }, 3000);
+                    }
+                });
+            });
+
+            function closeModal() {
+                modal.style.display = 'none';
+                mediaBox.innerHTML = '';
+                clearInterval(slideInterval); // Arrête le défilement à la fermeture
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+        });
+    </script>
 </body>
 </html>
