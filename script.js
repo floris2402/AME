@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             title: 'Installation électrique',
 
-            images: ['Gaines.jpeg', 'Tableau.jpeg', 'tableau.png', 'tableau2.png']
+            images: ['Gaines.jpeg', 'Tableau.jpeg', 'tableau2.png']
 
         },
 
