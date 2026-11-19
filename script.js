@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const serviceData = {
         installation: {
             title: 'Installation électrique',
-            images: ['Gaines.jpeg', 'Tableau.jpeg']
+            images: ['Gaines.jpeg', 'Tableau.jpeg', 'tableau2.png']
         },
         maintenance: {
             title: 'Maintenance',
