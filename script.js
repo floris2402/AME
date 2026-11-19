@@ -44,7 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const serviceCards = document.querySelectorAll('.service[data-service]');
 
     serviceCards.forEach(card => {
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
             const key = card.getAttribute('data-service');
             const data = serviceData[key];
             if (!data || !modal || !modalGallery) return;
@@ -70,6 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     closeModalBtn?.addEventListener('click', closeModal);
+    closeModalBtn?.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        closeModal();
+    });
+
     window.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
     });
