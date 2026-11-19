@@ -4,113 +4,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Animation au démarrage
     setTimeout(() => {
-        logoContainer.classList.add('pop');
+        logoContainer?.classList.add('pop');
     }, 200);
 
     setTimeout(() => {
-        logoContainer.classList.remove('pop');
-        logoContainer.classList.add('in-header');
+        logoContainer?.classList.remove('pop');
+        logoContainer?.classList.add('in-header');
     }, 1500);
 
     setTimeout(() => {
-        mainNav.classList.add('visible');
+        mainNav?.classList.add('visible');
     }, 2500);
 
-    // Fenêtre modale et diaporama
-    const modal = document.getElementById('imageModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalGallery = document.getElementById('modalGallery');
-    const closeModal = document.getElementById('closeModal');
-    const services = document.querySelectorAll('.service');
-
-    let slideshowInterval = null;
-
-    // Configuration des images par service
+    // Galeries d'images par service
     const serviceData = {
         installation: {
             title: 'Installation électrique',
-            images: ['Gaines.jpeg', 'Tableau.jpeg', 'tableau2.png']
+            images: [
+                'tableau1.png',
+                'photo2.jpg',
+                'photo3.jpg',
+                'tableau2.png'
+            ]
         },
         maintenance: {
             title: 'Maintenance',
-            images: ['170.JPG', '230.JPG', '326.JPG']
+            images: []
         },
         depannage: {
             title: 'Dépannage',
-            images: ['223.JPG', '122.JPG']
+            images: []
         }
     };
 
-    // Fonction pour démarrer la boucle d'affichage des photos toutes les 3 secondes
-    function startSlideshow(images) {
-        if (!images || images.length === 0) {
-            modalGallery.innerHTML = '<p>Aucune photo disponible pour le moment.</p>';
-            return;
-        }
+    const modal = document.getElementById('imageModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalGallery = document.getElementById('modalGallery');
+    const closeModalBtn = document.getElementById('closeModal');
+    const serviceCards = document.querySelectorAll('.service[data-service]');
 
-        let currentIndex = 0;
-
-        // Affichage de la première image
-        const imgElement = document.createElement('img');
-        imgElement.src = images[currentIndex];
-        imgElement.alt = "Photo du service";
-        
-        // Ajustement dynamique de l'image
-        imgElement.style.maxHeight = '100%';
-        imgElement.style.maxWidth = '100%';
-        imgElement.style.objectFit = 'contain';
-
-        modalGallery.innerHTML = '';
-        modalGallery.appendChild(imgElement);
-
-        // Si plusieurs images, on lance la boucle de 3 secondes (3000 ms)
-        if (images.length > 1) {
-            slideshowInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % images.length;
-                imgElement.style.opacity = '0'; // Effet de transition fondu
-                
-                setTimeout(() => {
-                    imgElement.src = images[currentIndex];
-                    imgElement.style.opacity = '1';
-                }, 300);
-            }, 3000);
-        }
-    }
-
-    // Fonction pour arrêter le diaporama
-    function stopSlideshow() {
-        if (slideshowInterval) {
-            clearInterval(slideshowInterval);
-            slideshowInterval = null;
-        }
-    }
-
-    // Ouverture de la modale au clic sur un service
-    services.forEach(service => {
-        service.addEventListener('click', () => {
-            const key = service.getAttribute('data-service');
+    serviceCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const key = card.getAttribute('data-service');
             const data = serviceData[key];
+            if (!data || !modal || !modalGallery) return;
 
-            if (data) {
-                modalTitle.textContent = data.title;
-                stopSlideshow();
-                modal.style.display = 'flex';
-                startSlideshow(data.images);
-            }
+            modalTitle.textContent = data.title;
+            modalGallery.innerHTML = '';
+
+            data.images.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = data.title;
+                modalGallery.appendChild(img);
+            });
+
+            modal.style.display = 'flex';
         });
     });
 
-    // Fermeture de la modale au clic sur la croix
-    closeModal.addEventListener('click', () => {
+    function closeModal() {
+        if (!modal) return;
         modal.style.display = 'none';
-        stopSlideshow();
-    });
+        if (modalGallery) modalGallery.innerHTML = '';
+    }
 
-    // Fermeture de la modale au clic à l'extérieur
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-            stopSlideshow();
-        }
+    closeModalBtn?.addEventListener('click', closeModal);
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
     });
 });
